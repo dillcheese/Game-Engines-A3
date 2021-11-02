@@ -3,14 +3,14 @@ using UnityEngine;
 public class ShootBall : MonoBehaviour
 {
     [SerializeField]
-    private GameObject bombPrefab;
+    private GameObject prefab;
 
     private Rigidbody rb;
 
     // Start is called before the first frame update
     private void Start()
     {
-        rb = bombPrefab.GetComponent<Rigidbody>();
+        rb = prefab.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -25,7 +25,9 @@ public class ShootBall : MonoBehaviour
     private void ShootBallFromPool()
     {
         var ball = BasicPool.Instance.GetFromPool();
-        ball.GetComponent<Rigidbody>().velocity = new Vector3(0f, rb.velocity.y, 12f);
-        ball.transform.position = gameObject.transform.position;
+
+        ball.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 20f;
+        ball.transform.position = new Vector3(gameObject.transform.position.x + Camera.main.transform.forward.x,
+            gameObject.transform.position.y + 0.5f, gameObject.transform.position.z + Camera.main.transform.forward.z);
     }
 }

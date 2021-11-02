@@ -2,18 +2,12 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        BasicPool.Instance.AddToPool(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+        }
+        else
+            BasicPool.Instance.AddToPool(gameObject);
     }
 }
