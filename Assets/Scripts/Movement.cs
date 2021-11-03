@@ -5,10 +5,10 @@ public class Movement : MonoBehaviour
     //variables
     private Rigidbody rb;
 
-    public float speed = 8f;
-    public float jumpForce = 24f;
+    public float speed = 8.5f;
+    public float jumpForce = 26f;
     public float gravity = 6f;
-    public float lookSpeed = 5f;
+    public float lookSpeed = 3.5f;
 
     private bool isGrounded = false;
     private bool won = false;
