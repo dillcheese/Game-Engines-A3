@@ -6,4 +6,4 @@ I also added a shooting mechanic
 
 THIRD PARTY SOURCES:
 
-The 3rd party sources I used were the ones from this class. Specifically the lab where the TA taught us how to make and import a DLL to Unity.
+The 3rd party sources I used were the ones from this class. Specifically the lab where the TA taught us how to make and the object pool in Unity.
