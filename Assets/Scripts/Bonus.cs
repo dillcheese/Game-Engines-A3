@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bonus : MonoBehaviour
 {
     public bool gotBonus = false;
+    public static event System.Action<string> bonusObtain;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +14,7 @@ public class Bonus : MonoBehaviour
         //    BasicPool.Instance.AddToPool(gameObject);
         gotBonus = true;
         gameObject.SetActive(false);
-       
-        //Destroy(gameObject);
+        bonusObtain?.Invoke(" YOU GOT THE BONUS! ");
+
     }
 }
